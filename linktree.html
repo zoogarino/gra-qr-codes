@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to Linktree...</title>
+    
+    <!-- Google Analytics 4 -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'GA_MEASUREMENT_ID');
+        
+        // Track QR code scan event
+        gtag('event', 'qr_scan', {
+            'event_category': 'QR Code',
+            'event_label': 'Linktree',
+            'custom_parameter_1': 'linktree_qr'
+        });
+    </script>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .spinner {
+            border: 4px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top: 4px solid white;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .fallback-link {
+            margin-top: 30px;
+            color: white;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Redirecting to our Linktree...</h1>
+    <div class="spinner"></div>
+    <p>You'll be redirected automatically in a moment.</p>
+    
+    <!-- Fallback link in case redirect fails -->
+    <a href="https://linktr.ee/GroundRushAdventuresSkydiving" class="fallback-link">
+        Click here if you're not redirected automatically
+    </a>
+
+    <script>
+        // Replace with your actual Linktree URL
+        const destinationURL = 'https://linktr.ee/GroundRushAdventuresSkydiving';
+        
+        // Add a small delay to ensure analytics fires
+        setTimeout(function() {
+            window.location.href = destinationURL;
+        }, 1500);
+        
+        // Fallback for users who might have JavaScript disabled
+        document.querySelector('.fallback-link').href = destinationURL;
+    </script>
+</body>
+</html>
